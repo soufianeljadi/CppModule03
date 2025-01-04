@@ -3,7 +3,7 @@
 
 ClapTrap::ClapTrap(std::string name):_name(name), _hit(10), _energy(10), _damage(0)
 {
-    std::cout << "Parameterized constructor called" << std::endl;
+    std::cout << "ClapTrap constructor called" << std::endl;
 }
 
 void	ClapTrap::attack(const std::string &target)
@@ -51,5 +51,5 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap destructor called" << std::endl;
 }
