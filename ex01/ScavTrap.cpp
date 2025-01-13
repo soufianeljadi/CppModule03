@@ -10,7 +10,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 void ScavTrap::attack(const std::string &target) 
 {
-    if (this->_energy > 0 && _hit > 0) {
+    if (this->_energy > 0 && this->_hit > 0) {
         std::cout << "ScavTrap " << this->_name << " attacks " << target
                   << ", causing " << this->_damage << " points of damage!" << std::endl;
         this->_energy--;

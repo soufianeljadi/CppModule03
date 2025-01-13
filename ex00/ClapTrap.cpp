@@ -23,9 +23,9 @@ void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (this->_hit > amount)
 		this->_hit -= amount;
-	else if (this->_hit > 0)
+	else if (this->_hit < amount && this->_hit > 0)
 		this->_hit = 0;
-	else
+	else if (this->_hit == 0)
 	{
 		std::cout << "ClapTrap " << this->_name << " is dead already!" << std::endl;
 		return ;
@@ -45,7 +45,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << this->_name << " cannot repair, doesn't have enough energy points!" << std::endl;
 	else if (this->_hit == 0)
 		std::cout << "ClapTrap " << this->_name << " cannot repair, doesn't have enough hit points!" << std::endl;
-	else
+	else 
 		std::cout<< "ClapTrap " << this->_name << " can\'t be repaired to have more than 10 hit points." << std::endl;
 }
 
