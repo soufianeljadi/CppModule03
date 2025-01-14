@@ -14,11 +14,10 @@ int main()
     frag2.attack("Enemy2");
     std::cout << std::endl;
 
-    FragTrap frag3(frag1);        
+    FragTrap frag3(frag1);  
     frag3.beRepaired(50);
     frag3.takeDamage(100);
     frag3.attack("Enemy3");
-
     std::cout << std::endl;
 
     return 0;

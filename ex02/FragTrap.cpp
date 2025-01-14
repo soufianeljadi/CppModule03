@@ -3,7 +3,7 @@
 FragTrap::FragTrap() : ClapTrap()
 {
     this->_hit = 100;
-    this->_energy = 50;
+    this->_energy = 100;
     this->_damage = 30;
     std::cout << "FragTrap default constructor called" << std::endl;
 }

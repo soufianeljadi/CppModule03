@@ -11,12 +11,6 @@ ClapTrap::ClapTrap(std::string name):_name(name), _hit(10), _energy(10), _damage
     std::cout << "Parameterized constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &copy)
-{
-	std::cout << "Copy constructor called" << std::endl;
-	*this = copy;
-}
-
 ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
@@ -28,6 +22,12 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &copy)
 		this->_damage = copy._damage;
 	}
 	return *this;
+}
+
+ClapTrap::ClapTrap(const ClapTrap &copy)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = copy;
 }
 
 void	ClapTrap::attack(const std::string &target)
