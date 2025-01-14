@@ -1,25 +1,24 @@
 
 #include "ClapTrap.hpp"
 
-int main()
+int main() 
 {
-    ClapTrap claptrap("Ben10");
+    ClapTrap clap1("Ben10");       
+    clap1.attack("Enemy1");
+    clap1.takeDamage(3);
+    clap1.beRepaired(5);
+    std::cout << std::endl;
 
-    claptrap.attack("Target 1");
-    claptrap.attack("Target 2");
+    ClapTrap clap2;            
+    clap2 = clap1;                  
+    clap2.attack("Enemy2");
+    std::cout << std::endl;
+    
+    ClapTrap clap3(clap1);         
+    clap3.takeDamage(10);
+    clap3.beRepaired(5);            
+    clap3.attack("Enemy3");
+    std::cout << std::endl;
 
-    claptrap.takeDamage(3);
-    claptrap.takeDamage(8);
-
-    claptrap.beRepaired(11);
-
-    ClapTrap claptrap2("Vilgax");
-
-    claptrap2.beRepaired(3);
-    claptrap2.beRepaired(10);
-
-    for (int i = 0; i < 11; i++) {
-        claptrap2.attack("Random Target");
-    }
     return 0;
 }

@@ -1,15 +1,15 @@
-CC = c++
+CXX = c++
 SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 OBJ = $(SRC:.cpp=.o)
 RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = ClassWars
+NAME = FragTrap
 
 all: $(NAME)
 
 $(NAME): $(OBJ) ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CPPFLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) $(OBJ)

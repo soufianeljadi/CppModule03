@@ -1,11 +1,37 @@
 #include "FragTrap.hpp"
 
+FragTrap::FragTrap() : ClapTrap()
+{
+    this->_hit = 100;
+    this->_energy = 50;
+    this->_damage = 30;
+    std::cout << "FragTrap default constructor called" << std::endl;
+}
+
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
     this->_hit = 100;
     this->_energy = 100;
     this->_damage = 30;
-    std::cout << "FragTrap constructor called" << std::endl;
+    std::cout << "FragTrap parameterized constructor called" << std::endl;
+}
+
+FragTrap::FragTrap(const FragTrap &copy): ClapTrap(copy)
+{
+	std::cout << "FragTrap copy constructor called" << std::endl;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &copy)
+{
+	std::cout << "FragTrap copy assignment operator called" << std::endl;
+	if(this != &copy)
+	{
+		this->_name = copy._name;
+		this->_hit = copy._hit;
+		this->_energy = copy._energy;
+		this->_damage = copy._damage;
+	}
+	return *this;
 }
 
 void FragTrap::attack(const std::string &target) 
